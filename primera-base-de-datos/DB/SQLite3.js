@@ -1,9 +1,9 @@
 const sql3 = {
     client: 'sqlite3',
     connection: {
-        filename: './DB/ecommerce.sqlite'
+        filename: './DB/ecommerce.db'
     },
     useNullAsDefault: true
 }
 
-module.export = {sql3}
+module.exports = sql3

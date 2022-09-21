@@ -1,4 +1,3 @@
-//import knex from 'knex'
 const knex = require ('knex');
 
 class ContenedorSQL {

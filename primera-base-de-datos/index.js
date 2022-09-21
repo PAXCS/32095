@@ -1,14 +1,12 @@
 const express = require('express');
 
 const { Server: HttpServer } = require('http')
+
 const { Server: Socket } = require('socket.io')
 
-//import ContenedorSQL from './contenedores/ContenedorSQL.js'
 const ContenedorSQL = require ('./contenedores/ContenedorSQL.js');
 
 const sql3 = require ('./DB/SQLite3.js');
-//import sql3 from './DB/SQLite3.js'
-//import options from './options/mariaDB.js'
 const options = require ('./options/mariaDB.js');
 
 
@@ -18,8 +16,8 @@ const app = express()
 const httpServer = new HttpServer(app)
 const io = new Socket(httpServer)
 
-const productosApi = new ContenedorSQL(options.mariaDB, 'productos')
-const mensajesApi = new ContenedorSQL(sql3.sqlite3, 'mensajes')
+const productosApi = new ContenedorSQL(options, 'productos')
+const mensajesApi = new ContenedorSQL(sql3, 'mensajes')
 
 //Socket
 

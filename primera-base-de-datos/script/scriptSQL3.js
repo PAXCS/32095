@@ -1,5 +1,5 @@
 import ClienteSQL3 from "../clienteSQL3";
-import { sql3 } from "../DB"
+import { sql3 } from "../DB/SQLite3.js";
 
 const msql3 = new ClienteSQL3(sql3)
 

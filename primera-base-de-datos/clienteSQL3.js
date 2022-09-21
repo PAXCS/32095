@@ -1,5 +1,4 @@
-//import knexLib from 'knex'
-const knexLib = require ('knex');
+import knexLib from 'knex'
 
 //Cliente
 
