@@ -1,4 +1,4 @@
-import knexLib from 'knex'
+const knexLib = require('knex');
 
 //Cliente
 
@@ -12,7 +12,7 @@ class ClienteSQL3 {
             return this.knex.schema.createTable("mensajes", table =>{
                 table.increments("id").primary();
                 table.string("autor", 15).notNullable();
-                table.string("texto", 10),notNullable();
+                table.string("texto", 10).notNullable();
                 table.float("fyh");
             })
         })
@@ -23,7 +23,7 @@ class ClienteSQL3 {
     }
 
     listarMensajes() {
-        return this.knex('productos').select('*')
+        return this.knex('mensajes').select('*')
       }
     
       close() {
@@ -31,4 +31,4 @@ class ClienteSQL3 {
       }
     }
     
-    export default ClienteSQL3
+    module.exports = ClienteSQL3

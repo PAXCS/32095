@@ -1,4 +1,4 @@
-import knexLib from 'knex'
+const knexLib = require('knex');
 
 //Cliente
 
@@ -11,8 +11,9 @@ class ClienteSQL {
         return this.knex.schema.dropTableIfExists('productos').finally(()=> {
             return this.knex.schema.createTable("productos", table =>{
                 table.increments("id").primary();
+                //table.thumbnail("thumbnail");
                 table.string("nombre", 15).notNullable();
-                table.string("codigo", 10),notNullable();
+                table.string("codigo", 10).notNullable();
                 table.float("precio");
                 table.integer("stock");
             })
@@ -40,4 +41,4 @@ class ClienteSQL {
       }
     }
     
-    export default ClienteSQL
+    module.exports = ClienteSQL

@@ -1,5 +1,6 @@
-import ClienteSQL from "../clienteSQL";
-import { options } from "../options/mariaDB";
+const ClienteSQL = require('../clienteSQL');
+
+const options = require("../options/mariaDB");
 
 const mariaSql = new ClienteSQL(options)
 

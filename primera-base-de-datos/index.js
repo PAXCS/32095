@@ -1,12 +1,11 @@
 const express = require('express');
 
 const { Server: HttpServer } = require('http')
-
 const { Server: Socket } = require('socket.io')
 
 const ContenedorSQL = require ('./contenedores/ContenedorSQL.js');
 
-const sql3 = require ('./DB/SQLite3.js');
+const sql3 = require ('./db/SQLite3.js');
 const options = require ('./options/mariaDB.js');
 
 
@@ -35,7 +34,7 @@ io.on('connection', async socket =>{
 
     socket.on('nuevoMensaje', async mensaje => {
         mensaje.fyh = new Date().toLocaleString()
-        mensaje.likes = 0
+       // mensaje.likes = 0
         await mensajesApi.save(mensaje)
         io.sockets.emit('mensajes', await mensajesApi.getAll());
     })

@@ -1,7 +1,10 @@
-import ClienteSQL3 from "../clienteSQL3";
-import { sql3 } from "../DB/SQLite3.js";
+const ClienteSQL3 = require('../clienteSQL3');
 
-const msql3 = new ClienteSQL3(sql3)
+const csql3 = require('../db/SQLite3.js');
+
+const msql3 = new ClienteSQL3(csql3)
+
+console.log(ClienteSQL3);
 
 msql3.crearTabla()
     .then(()=> {
@@ -25,12 +28,12 @@ msql3.crearTabla()
         return msql3.insertarMensajes(mensajes)
     })
     .then(()=> {
-        console.log("b) Mesajes")
+        console.log("b) Mensajes")
         return msql3.listarMensajes()
     })
-    .then(productos => {
+    .then(mensajes => {
         console.log("Todos")
-        console.table(productos)
+        console.table(mensajes)
     })
       .catch((err) => { console.log(err); throw err })
       .finally(() => {
