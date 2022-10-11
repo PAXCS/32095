@@ -30,7 +30,7 @@ class ContenedorMemoria {
       return newElem;
     }
   
-    save(elem) {
+    update(elem) {
       const index = this.elementos.findIndex((p) => p.id == elem.id);
       console.log(this.elementos);
       if (index == -1) {

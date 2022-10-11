@@ -4,7 +4,7 @@ export default {
     },
 
     mongodb: {
-      cnxStr: "mongodb+srv://<credentials>@cluster0.2qm6piw.mongodb.net/myFirstDatabase?appName=mongosh+1.6.0",
+      cnxStr: "mongodb+srv://cpax:lpPbv8sf78PHOzbi@cluster0.2qm6piw.mongodb.net/myFirstDatabase?appName=mongosh+1.6.0",
       options: {
         useNewUrlParser: true,
         useUnifiedTopology: true,
