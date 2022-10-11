@@ -11,7 +11,7 @@ class ClienteSQL {
         return this.knex.schema.dropTableIfExists('productos').finally(()=> {
             return this.knex.schema.createTable("productos", table =>{
                 table.increments("id").primary();
-                //table.thumbnail("thumbnail");
+                //table.string("thumbnail", 255).notNullable; => forma correcta para agregar thumbnail
                 table.string("nombre", 15).notNullable();
                 table.string("codigo", 10).notNullable();
                 table.float("precio");
