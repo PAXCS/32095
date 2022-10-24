@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../css/vista')-%>
+            <form action="/logout" method="GET">
+                <div class='profile'>
+                    <h1> Bienvenido
+                    </h1>
+                    <p class="card-title">
+                        <%= user.username %>.
+                    </p>
+                    <button id='logout' type="submit" class="btn btn-danger">Desloguearse</button>
+            </form>
+    </div>
+</body>
+
+</html>
