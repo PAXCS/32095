@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../css/vista')-%>
+            <% if(username) {%>
+                <div class='singup'>
+                    <form action="/singup" method="post">
+                        <h1> Bienvenido
+                        </h1>
+                        <p class="card-title">
+                            <%= username %>.
+                        </p>
+                        <button class="btn btn-danger">Desloguearse</button>
+                    </form>
+                </div>
+                <% } else { %>
+                    <div></div>
+                    <% } %>
+    </div>
+</body>
+
+</html>
