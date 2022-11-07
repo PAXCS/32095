@@ -1,0 +1,16 @@
+//NGINX cambio en la configuracion y reload
+.\nginx.exe -s reload
+
+//comprobacion de procesos
+tasklist -fi "imagename eq nginx.exe"
+
+//Inicializacion modo FORK
+pm2 start src/main.js --name="Server1" --watch
+
+//Incializacion modo CLUSTER
+pm2 start src/main.js --name="Server2" --watch -i 1 -- 8082   
+pm2 start src/main.js --name="Server3" --watch -i 1 -- 8083  
+pm2 start src/main.js --name="Server4" --watch -i 1 -- 8084
+
+//Listo los procesos
+pm2 list
