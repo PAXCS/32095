@@ -3,15 +3,20 @@
   "name": "servidor-balance-de-carga",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "nodemon src/main.js -e ejs,html,js,json",
+    "startProf": "0x src/main.js",
+    "benchmark": "node scripts/benchmark.js"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "0x": "^4.1.4",
+    "autocannon": "^7.10.0",
     "nodemon": "^2.0.20"
   },
   "dependencies": {
@@ -23,6 +28,7 @@
     "express-session": "^1.17.3",
     "faker": "^5.5.3",
     "knex": "^2.3.0",
+    "log4js": "^6.7.0",
     "minimist": "^1.2.7",
     "mysql": "^2.18.1",
     "normalizr": "^3.6.2",

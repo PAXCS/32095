@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import config from '../../config.js'
 import path from 'path'
+import compression from 'compression'
+const zip = compression()
 
 const productosWebRouter = new Router()
 
@@ -23,6 +25,12 @@ productosWebRouter.get('/productos-vista-test', (req, res) => {
 
 productosWebRouter.get('/info', (req, res) => {
     res.render(path.join(process.cwd(), './views/pages/info.ejs'), {
+        specs: config.getSpecs()
+    })
+})
+
+productosWebRouter.get('/infogzip', zip, (req, res) => {
+    res.render(path.join(process.cwd(), './views/pages/infogzip.ejs'), {
         specs: config.getSpecs()
     })
 })

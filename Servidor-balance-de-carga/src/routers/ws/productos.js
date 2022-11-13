@@ -1,10 +1,13 @@
 import productosApi from '../../api/productos.js'
 
+import { logError } from '../../loggers/index.js'
+
 async function manejarEnvíoDeProductos() {
     try {
         const productos = await productosApi.listarAll();
         return productos
     } catch (error) {
+        logError(error.message)
         return []
     }
 }
@@ -16,7 +19,7 @@ export default async function configurarSocket(socket, sockets) {
         try {
             await productosApi.guardar(producto)
         } catch (error) {
-           return "error al guardar producto"
+           logError(`error al guardar el producto: ${error.message}`)
 
         }
 

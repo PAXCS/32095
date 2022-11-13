@@ -17,6 +17,8 @@ import randomsApiRouter from './routers/api/randoms.js'
 import addProductosHandlers from './routers/ws/productos.js'
 import addMensajesHandlers from './routers/ws/mensajes.js'
 
+import { logInfo, logError, logWarning } from './loggers/index.js'
+
 function createServer() {
 
     //--------------------------------------------
@@ -55,16 +57,30 @@ function createServer() {
 
     //--------------------------------------------
 
+    // logging general
+
+    app.use((req, res, next) => {
+        logInfo(`${req.method} ${req.url}`)
+        next()
+    })
+
     // rutas del servidor API REST
 
     app.use('/api', productosApiRouter)
     app.use('/api', randomsApiRouter)
 
+    // logging casos no manejados
+
+    app.use('*', (req, res, next) => {
+        logWarning(`${req.method} ${req.originalUrl} - ruta inexistente!`)
+        next()
+    })
+
     //-------------------------randoms--------------------------//
     
     app.get('/api/randoms', (req, res) => {
         const cant = req.query.cant || 100000000
-        const child = fork('./child.js')
+        //const child = fork('./child.js')
         child.send(cant)
         child.on('message', result => {
             res.send({result})

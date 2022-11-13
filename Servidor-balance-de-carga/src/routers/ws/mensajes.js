@@ -1,4 +1,5 @@
 import mensajesApi from '../../api/mensajes.js'
+import { logError } from '../../loggers/index.js'
 import { normalizarMensajes } from '../../normalizacion/index.js'
 
 async function manejarEnvíoDeMensajes() {
@@ -6,6 +7,7 @@ async function manejarEnvíoDeMensajes() {
         const mensajes = await mensajesApi.listarAll()
         return normalizarMensajes(mensajes)
     } catch (error) {
+        logError(error.message)
         return []
     }
 }

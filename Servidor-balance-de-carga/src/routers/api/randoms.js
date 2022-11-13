@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { calcular } from '../../api/randoms.js'
+import { logError } from '../../loggers/index.js'
 
 const randomsApiRouter = new Router()
 
@@ -9,7 +10,8 @@ randomsApiRouter.get('/randoms', async (req, res, next) => {
         const result = await calcular(cant)
         res.json(result)
     } catch (error) {
-        return "Error!"
+        logError(error.message)
+        next(error)
     }
 })
 
