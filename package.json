@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +14,6 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.2"
   }
 }
