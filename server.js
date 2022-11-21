@@ -6,8 +6,8 @@ const productosRouter = require('./router/productos')
 app.use(express.static('public'))
 app.use('/api/productos', productosRouter)
 
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, () => {
-    console.log(`Servidor escuchando en el puerto ${server.address().port}`)
+    console.log(`Servidor express escuchando en el puerto ${PORT}`)
 })
-server.on("error", error => console.log(`Error ${error} en servidor `))
+server.on('error', error => console.log(`Error en servidor ${error}`))
