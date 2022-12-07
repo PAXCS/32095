@@ -1,3 +1,4 @@
+//CAPA DE RUTEO
 import { Router } from 'express'
 import { webAuth } from '../../auth/index.js'
 

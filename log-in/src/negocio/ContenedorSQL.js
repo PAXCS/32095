@@ -1,3 +1,5 @@
+//CAPA NEGOCIOS
+
 import knex from 'knex'
 
 class ContenedorSQL {

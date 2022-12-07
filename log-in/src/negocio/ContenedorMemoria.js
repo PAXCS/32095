@@ -1,3 +1,5 @@
+//CAPA NEGOCIOS
+
 class ContenedorMemoria {
 
     constructor() {

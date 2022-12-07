@@ -1,3 +1,5 @@
+//CAPA DEL SERVIDOR
+
 import express from 'express'
 
 import session from 'express-session'
@@ -9,12 +11,12 @@ import config from './config.js'
 import { Server as HttpServer } from 'http'
 import { Server as Socket } from 'socket.io'
 
-import authWebRouter from './routers/web/auth.js'
-import homeWebRouter from './routers/web/home.js'
-import productosApiRouter from './routers/api/productos.js'
+import authWebRouter from './rutas/web/auth.js'
+import homeWebRouter from './rutas/web/home.js'
+import productosApiRouter from './rutas/api/productos.js'
 
-import addProductosHandlers from './routers/ws/productos.js'
-import addMensajesHandlers from './routers/ws/mensajes.js'
+import addProductosHandlers from './rutas/ws/productos.js'
+import addMensajesHandlers from './rutas/ws/mensajes.js'
 
 //--------------------------------------------
 // instancio servidor, socket y api

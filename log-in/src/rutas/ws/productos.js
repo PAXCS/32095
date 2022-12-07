@@ -1,4 +1,4 @@
-import productosApi from '../../api/productos.js'
+import productosApi from '../../persistencia/productos.js'
 
 export default async function configurarSocket(socket, sockets) {
     socket.emit('productos', await productosApi.listarAll());
