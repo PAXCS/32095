@@ -1,0 +1,5 @@
+[2022-12-20T13:48:50.888] [WARN] warn - GET /favicon.ico - ruta inexistente!
+[2022-12-20T13:50:54.468] [WARN] warn - GET /productos - ruta inexistente!
+[2022-12-20T13:51:07.065] [WARN] warn - GET /api/productos - ruta inexistente!
+[2022-12-20T14:32:09.151] [WARN] warn - GET /logout - ruta inexistente!
+[2022-12-20T14:32:36.051] [WARN] warn - GET /logout - ruta inexistente!
